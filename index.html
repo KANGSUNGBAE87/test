@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>뽁뽁이</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #d0eaf7 0%, #e8f6fc 100%);
+      font-family: 'Segoe UI', sans-serif;
+      user-select: none;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #2c5f7a;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    #score {
+      font-size: 1rem;
+      color: #5a8a9f;
+      margin-bottom: 28px;
+    }
+
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(4, 80px);
+      grid-template-rows: repeat(4, 80px);
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .bubble {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.05s;
+      background: radial-gradient(circle at 35% 30%, #e8f7fc, #7ac8e8 60%, #4aa8cc);
+      box-shadow: 0 4px 12px rgba(74,168,204,0.35), inset 0 -3px 6px rgba(0,0,0,0.1);
+    }
+
+    .bubble::before {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 14px;
+      background: rgba(255,255,255,0.65);
+      border-radius: 50%;
+      top: 14px;
+      left: 14px;
+    }
+
+    .bubble:hover {
+      transform: scale(1.07);
+      box-shadow: 0 6px 18px rgba(74,168,204,0.5), inset 0 -3px 6px rgba(0,0,0,0.1);
+    }
+
+    .bubble:active { transform: scale(0.93); }
+
+    .bubble.popping {
+      animation: pop 0.28s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes pop {
+      0%   { transform: scale(1); opacity: 1; }
+      30%  { transform: scale(1.35); opacity: 1; }
+      60%  { transform: scale(0.05); opacity: 0.4; }
+      100% { transform: scale(0); opacity: 0; }
+    }
+
+    .bubble.popped {
+      background: rgba(180, 215, 230, 0.25);
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.08);
+      cursor: default;
+      pointer-events: none;
+      transform: scale(1) !important;
+    }
+    .bubble.popped::before { display: none; }
+
+    .particle {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fly 0.5s ease-out forwards;
+    }
+
+    @keyframes fly {
+      0%   { transform: translate(0,0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
+    }
+
+    #reset {
+      padding: 12px 32px;
+      font-size: 1rem;
+      background: #2c5f7a;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 1px;
+    }
+
+    #reset:hover  { background: #1a3f52; }
+    #reset:active { transform: scale(0.96); }
+
+    #celebrate {
+      font-size: 1.4rem;
+      color: #2c5f7a;
+      margin-top: 16px;
+      height: 32px;
+      font-weight: bold;
+      animation: bounce 0.4s ease;
+    }
+
+    @keyframes bounce {
+      0%,100% { transform: scale(1); }
+      50%      { transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🫧 뽁뽁이 🫧</h1>
+  <p id="score">터진 뽁뽁이: 0 / 16</p>
+
+  <div id="grid"></div>
+
+  <button id="reset">다시 채우기 🔄</button>
+  <p id="celebrate"></p>
+
+  <script>
+    const grid = document.getElementById('grid');
+    const scoreEl = document.getElementById('score');
+    const celebrateEl = document.getElementById('celebrate');
+    const resetBtn = document.getElementById('reset');
+
+    let popped = 0;
+    const bubbles = [];
+    const COLORS = ['#ff6b9d','#ffb347','#a8e063','#56ccf2','#c084fc','#f87171','#34d399'];
+
+    function createBubbles() {
+      grid.innerHTML = '';
+      bubbles.length = 0;
+      popped = 0;
+      celebrateEl.textContent = '';
+      updateScore();
+
+      for (let i = 0; i < 16; i++) {
+        const b = document.createElement('div');
+        b.className = 'bubble';
+        b.addEventListener('click', () => popBubble(b));
+        grid.appendChild(b);
+        bubbles.push(b);
+
+        b.style.opacity = '0';
+        b.style.transform = 'scale(0.3)';
+        b.style.transition = `opacity 0.3s ${i * 30}ms, transform 0.3s ${i * 30}ms`;
+        requestAnimationFrame(() => {
+          b.style.opacity = '1';
+          b.style.transform = 'scale(1)';
+        });
+      }
+    }
+
+    function popBubble(b) {
+      if (b.classList.contains('popped') || b.classList.contains('popping')) return;
+      spawnParticles(b);
+      b.classList.add('popping');
+      popped++;
+      updateScore();
+      if (navigator.vibrate) navigator.vibrate(30);
+      b.addEventListener('animationend', () => {
+        b.classList.remove('popping');
+        b.classList.add('popped');
+        if (popped === 16) celebrate();
+      }, { once: true });
+    }
+
+    function spawnParticles(b) {
+      const rect = b.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      for (let i = 0; i < 7; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const angle = (i / 7) * 360;
+        const dist = 40 + Math.random() * 30;
+        const dx = Math.cos(angle * Math.PI / 180) * dist;
+        const dy = Math.sin(angle * Math.PI / 180) * dist;
+        p.style.left = cx + 'px';
+        p.style.top  = cy + 'px';
+        p.style.setProperty('--dx', dx + 'px');
+        p.style.setProperty('--dy', dy + 'px');
+        p.style.background = COLORS[i % COLORS.length];
+        document.body.appendChild(p);
+        p.addEventListener('animationend', () => p.remove(), { once: true });
+      }
+    }
+
+    function updateScore() {
+      scoreEl.textContent = `터진 뽁뽁이: ${popped} / 16`;
+    }
+
+    function celebrate() {
+      celebrateEl.textContent = '🎉 전부 터트렸어요! 🎉';
+      celebrateEl.style.animation = 'none';
+      requestAnimationFrame(() => {
+        celebrateEl.style.animation = 'bounce 0.4s ease';
+      });
+    }
+
+    resetBtn.addEventListener('click', createBubbles);
+    createBubbles();
+  </script>
+</body>
+</html>
