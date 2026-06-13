@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Bbok Bbok app icon">
+  <defs>
+    <linearGradient id="bg" x1="84" y1="70" x2="516" y2="540" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#DDF8FF"/>
+      <stop offset="0.55" stop-color="#7FDBF1"/>
+      <stop offset="1" stop-color="#2C8FD3"/>
+    </linearGradient>
+    <radialGradient id="bubble" cx="36%" cy="26%" r="64%">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.18" stop-color="#F2FDFF"/>
+      <stop offset="0.56" stop-color="#A8ECFF"/>
+      <stop offset="1" stop-color="#24AEE0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#12659A" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <circle cx="300" cy="300" r="184" fill="url(#bubble)" filter="url(#shadow)"/>
+  <circle cx="234" cy="208" r="47" fill="#FFFFFF" opacity="0.82"/>
+  <circle cx="384" cy="218" r="20" fill="#FFFFFF" opacity="0.62"/>
+  <circle cx="203" cy="344" r="16" fill="#FFFFFF" opacity="0.52"/>
+  <path d="M197 401c54 42 151 46 207 2" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" opacity="0.7"/>
+  <path d="M269 316l36-88 36 88 88 36-88 36-36 88-36-88-88-36 88-36z" fill="#FFFFFF" opacity="0.9"/>
+</svg>
