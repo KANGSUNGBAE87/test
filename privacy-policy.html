@@ -62,16 +62,16 @@
         <ul>
           <li>앱 이름: 크레이지 뽁뽁이</li>
           <li>패키지명: <code>com.kangsungbae.bbokbbok</code></li>
-          <li>개발자/게시자: KANGSUNGBAE87</li>
-          <li>개인정보 문의: Google Play 스토어 등록 페이지의 개발자 연락처를 통해 문의할 수 있습니다.</li>
+          <li>개발자/게시자: 닥터강</li>
+          <li>개인정보 문의: <a href="mailto:sbkang82@gmail.com">sbkang82@gmail.com</a></li>
         </ul>
       </section>
 
       <section>
         <h2>현재 빌드의 데이터 처리 요약</h2>
-        <p>현재 Google Play 제출 빌드는 계정 생성, 실제 광고, 실제 결제, 분석 SDK, 원격 진행도 동기화 서버를 사용하지 않습니다. 앱은 게임 진행을 위해 아래 정보를 사용자의 기기 내부 저장소에 저장합니다.</p>
+        <p>현재 Google Play 제출 빌드는 계정 생성, 실제 광고, 실제 결제, 분석 SDK, 원격 진행도 동기화 서버를 사용하지 않습니다. 앱은 별도 계정 생성이나 로그인 없이 게스트 모드로 이용할 수 있습니다. 앱은 게임 진행을 위해 아래 정보를 사용자의 기기 내부 저장소에 저장합니다.</p>
         <ul>
-          <li>로컬 플레이어 프로필 식별자와 로컬 로그인 상태</li>
+          <li>로컬 플레이어 프로필 식별자와 게스트 플레이 상태</li>
           <li>언어 설정</li>
           <li>사운드, 햅틱, 꾸미기 장착 상태 같은 설정</li>
           <li>팝조각, 보유 꾸미기, 부스터, 경제 사용/획득 로그</li>
@@ -83,7 +83,7 @@
 
       <section>
         <h2>권한과 기기 기능</h2>
-        <p>현재 Android 빌드는 인터넷 권한을 포함합니다. 이 권한은 Capacitor/WebView 기반 앱 리소스와 향후 플랫폼 연동을 위해 포함되어 있으며, 현재 빌드는 게임 진행 데이터를 개발자 서버로 업로드하지 않습니다. 앱은 팝 효과를 위해 기기의 오디오 출력과 진동 기능을 사용할 수 있으나, 카메라, 마이크, 위치, 연락처, 문자, 통화 기록, 사진/동영상 파일, 광고 ID 권한을 요청하지 않습니다. No Advertising ID permission is used in the current build.</p>
+        <p>현재 Android 제출 빌드는 인터넷 권한을 포함합니다. 인터넷 권한이 있더라도 현재 빌드는 게임 진행 정보, 개인정보, 광고 식별자를 개발자 서버로 업로드하지 않습니다. 앱은 팝 효과를 위해 기기의 오디오 출력과 진동 기능을 사용할 수 있으나, 카메라, 마이크, 위치, 연락처, 문자, 통화 기록, 사진/동영상 파일, 광고 ID 권한을 요청하지 않습니다. No Advertising ID permission is used in the current build.</p>
       </section>
 
       <section>
@@ -94,7 +94,7 @@
       <section>
         <h2>제3자 제공 및 SDK</h2>
         <p>현재 Google Play 제출 빌드는 AdMob, Google Play Billing, Firebase Analytics, Crashlytics, 광고 중개 SDK, 별도 분석 SDK를 연결하지 않습니다. 또한 현재 빌드는 사용자 데이터를 개발자 서버 또는 제3자 서버로 공유하도록 구성되어 있지 않습니다.</p>
-        <p>앱은 Capacitor 기반 Android WebView로 패키징되며, 향후 Apps in Toss 출시를 위해 앱인토스 프레임워크 의존성을 보유할 수 있습니다. 현재 Google Play 제출 빌드에서는 Toss 로그인, Apps in Toss 광고, Apps in Toss 결제, Google 로그인, Google Play 결제, 광고 ID 사용이 활성화되어 있지 않습니다.</p>
+        <p>앱은 Capacitor 기반 Android WebView로 패키징됩니다. 프로젝트에는 Apps in Toss 호환 의존성이 포함되어 있을 수 있지만, 현재 Google Play 제출 빌드에서는 Toss 로그인, Apps in Toss 광고, Apps in Toss 결제, Apps in Toss 게임 사용자 식별키, Google 로그인, Google Play 결제, 광고 ID 사용이 활성화되어 있지 않습니다.</p>
       </section>
 
       <section>
@@ -127,16 +127,16 @@
           <ul>
             <li>App name: 크레이지 뽁뽁이</li>
             <li>Package name: <code>com.kangsungbae.bbokbbok</code></li>
-            <li>Developer / publisher: KANGSUNGBAE87</li>
-            <li>Privacy contact: You can contact the developer through the developer contact information shown on the Google Play Store listing.</li>
+          <li>Developer / publisher: Dr. Kang</li>
+          <li>Privacy contact: <a href="mailto:sbkang82@gmail.com">sbkang82@gmail.com</a></li>
           </ul>
         </section>
 
         <section>
           <h2>Current Build Data Handling Summary</h2>
-          <p>The current Google Play submission build does not use account creation, live ads, live purchases, analytics SDKs, or a remote progress-sync server. The app stores the following information on the user's device to maintain gameplay:</p>
+          <p>The current Google Play submission build does not use account creation, live ads, live purchases, analytics SDKs, or a remote progress-sync server. The app can be used in guest mode without creating an account or signing in. The app stores the following information on the user's device to maintain gameplay:</p>
           <ul>
-            <li>Local player profile identifier and local sign-in state</li>
+            <li>Local player profile identifier and guest play state</li>
             <li>Language setting</li>
             <li>Settings such as sound, haptics, and equipped cosmetics</li>
             <li>Pop Pieces, owned cosmetics, boosters, and economy earn/spend logs</li>
@@ -148,7 +148,7 @@
 
         <section>
           <h2>Permissions and Device Features</h2>
-          <p>The current Android build includes the Internet permission for the Capacitor/WebView app shell and future platform integration paths. The current build does not upload gameplay data to a developer server. The app may use device audio output and vibration for pop effects, but it does not request camera, microphone, location, contacts, SMS, call logs, photos/videos, or Advertising ID permission. No Advertising ID permission is used in the current build.</p>
+          <p>The current Android submission build includes the Internet permission. Even with this permission, the current build does not upload gameplay data, personal information, or advertising identifiers to a developer server. The app may use device audio output and vibration for pop effects, but it does not request camera, microphone, location, contacts, SMS, call logs, photos/videos, or Advertising ID permission. No Advertising ID permission is used in the current build.</p>
         </section>
 
         <section>
@@ -159,7 +159,7 @@
         <section>
           <h2>Third Parties and SDKs</h2>
           <p>The current Google Play submission build does not connect AdMob, Google Play Billing, Firebase Analytics, Crashlytics, ad mediation SDKs, or a separate analytics SDK. The current build is also not configured to share user data with a developer server or third-party server.</p>
-          <p>The app is packaged as a Capacitor Android WebView app and may include an Apps in Toss framework dependency for a later Apps in Toss release path. In the current Google Play submission build, Toss login, Apps in Toss ads, Apps in Toss payments, Google sign-in, Google Play Billing, and Advertising ID usage are not enabled.</p>
+          <p>The app is packaged as a Capacitor Android WebView app. The project may include Apps in Toss compatibility dependencies, but the current Google Play submission build does not enable Toss login, Apps in Toss ads, Apps in Toss payments, Apps in Toss game user keys, Google sign-in, Google Play Billing, or Advertising ID usage.</p>
         </section>
 
         <section>
