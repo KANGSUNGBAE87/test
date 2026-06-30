@@ -55,7 +55,7 @@
   <body>
     <main>
       <h1>크레이지 뽁뽁이 개인정보처리방침</h1>
-      <p class="updated">최종 업데이트: 2026-06-14</p>
+      <p class="updated">최종 업데이트: 2026-06-26</p>
 
       <section>
         <h2>앱</h2>
@@ -69,7 +69,7 @@
 
       <section>
         <h2>현재 빌드의 데이터 처리 요약</h2>
-        <p>현재 Google Play 제출 빌드는 계정 생성, 실제 광고, 실제 결제, 분석 SDK, 원격 진행도 동기화 서버를 사용하지 않습니다. 앱은 별도 계정 생성이나 로그인 없이 게스트 모드로 이용할 수 있습니다. 앱은 게임 진행을 위해 아래 정보를 사용자의 기기 내부 저장소에 저장합니다.</p>
+        <p>현재 빌드는 실제 광고, 실제 결제, 별도 분석 SDK를 사용하지 않습니다. 앱은 게스트 모드로도 이용할 수 있으며, 사용자가 로그인 또는 로컬 플레이어 프로필 연결을 선택하면 데일리/주간 챌린지 기록판을 위해 Supabase 백엔드가 사용될 수 있습니다. 앱은 게임 진행을 위해 아래 정보를 사용자의 기기 내부 저장소에 저장합니다.</p>
         <ul>
           <li>로컬 플레이어 프로필 식별자와 게스트 플레이 상태</li>
           <li>언어 설정</li>
@@ -78,34 +78,34 @@
           <li>스테이지 클리어, 별, 최고 기록, 오늘/주간 도전 기록</li>
           <li>출석 보상과 일일 미션 상태</li>
         </ul>
-        <p>현재 빌드는 위 정보를 개발자 서버나 제3자에게 전송하도록 구성되어 있지 않습니다. Google Play 데이터 보안 양식 기준으로, 현재 빌드의 게임 진행 정보는 기기 내 처리에 머뭅니다.</p>
+        <p>로그인된 사용자끼리의 챌린지 기록판을 사용할 때는 챌린지 종류, 챌린지 날짜/주차 키, 보드 seed, 클리어 시간, 탭 수, 별 개수, 부스터/이어하기 여부, 앱 버전, 표시 이름, 앱 내부 사용자 식별자, Supabase 인증 사용자 ID가 Supabase에 저장될 수 있습니다. 일반 스테이지 진행도, 팝조각, 꾸미기, 부스터, 출석, 미션 상태는 별도 동기화 기능을 켜기 전까지 기기 내 처리에 머뭅니다.</p>
       </section>
 
       <section>
         <h2>권한과 기기 기능</h2>
-        <p>현재 Android 제출 빌드는 인터넷 권한과 진동 권한을 포함합니다. 인터넷 권한이 있더라도 현재 빌드는 게임 진행 정보, 개인정보, 광고 식별자를 개발자 서버로 업로드하지 않습니다. 진동 권한은 팝 효과를 위한 기기 진동에만 사용됩니다. 앱은 팝 효과를 위해 기기의 오디오 출력과 진동 기능을 사용할 수 있으나, 카메라, 마이크, 위치, 연락처, 문자, 통화 기록, 사진/동영상 파일, 광고 ID 권한을 요청하지 않습니다. No Advertising ID permission is used in the current build.</p>
+        <p>현재 Android 제출 빌드는 인터넷 권한과 진동 권한을 포함합니다. 인터넷 권한은 앱 콘텐츠 제공과 로그인 챌린지 기록판 연동에 사용될 수 있습니다. 진동 권한은 팝 효과를 위한 기기 진동에만 사용됩니다. 앱은 팝 효과를 위해 기기의 오디오 출력과 진동 기능을 사용할 수 있으나, 카메라, 마이크, 위치, 연락처, 문자, 통화 기록, 사진/동영상 파일, 광고 ID 권한을 요청하지 않습니다. No Advertising ID permission is used in the current build.</p>
       </section>
 
       <section>
         <h2>이용 목적</h2>
-        <p>저장 정보는 게임 진행도 유지, 설정 유지, 모드 기록 표시, 출석과 미션 상태 계산, 팝조각 보상과 소비 내역 확인을 위해 사용됩니다.</p>
+        <p>저장 정보는 게임 진행도 유지, 설정 유지, 모드 기록 표시, 출석과 미션 상태 계산, 팝조각 보상과 소비 내역 확인, 로그인 사용자 간 데일리/주간 챌린지 기록판 제공을 위해 사용됩니다.</p>
       </section>
 
       <section>
         <h2>제3자 제공 및 SDK</h2>
-        <p>현재 Google Play 제출 빌드는 AdMob, Google Play Billing, Firebase Analytics, Crashlytics, 광고 중개 SDK, 별도 분석 SDK를 연결하지 않습니다. 또한 현재 빌드는 사용자 데이터를 개발자 서버 또는 제3자 서버로 공유하도록 구성되어 있지 않습니다.</p>
+        <p>현재 Google Play 제출 빌드는 AdMob, Google Play Billing, Firebase Analytics, Crashlytics, 광고 중개 SDK, 별도 분석 SDK를 연결하지 않습니다. 로그인 챌린지 기록판에는 Supabase가 백엔드 제공자로 사용될 수 있습니다.</p>
         <p>앱은 Capacitor 기반 Android WebView로 패키징됩니다. 프로젝트에는 Apps in Toss 호환 의존성이 포함되어 있을 수 있지만, 현재 Google Play 제출 빌드에서는 Toss 로그인, Apps in Toss 광고, Apps in Toss 결제, Apps in Toss 게임 사용자 식별키, Google 로그인, Google Play 결제, 광고 ID 사용이 활성화되어 있지 않습니다.</p>
       </section>
 
       <section>
         <h2>보관 및 삭제</h2>
-        <p>로컬 플레이어 프로필과 게임 진행 정보는 사용자의 기기 안에 보관됩니다. 사용자는 Android 앱 정보에서 앱 데이터를 삭제하거나 앱을 삭제해 로컬 데이터를 제거할 수 있습니다. 사용자의 기기 또는 Google 계정 설정에 따라 Android 시스템 백업/복원 기능이 앱 데이터를 처리할 수 있으나, 개발자는 현재 빌드에서 해당 데이터를 별도 서버로 수집하지 않습니다.</p>
-        <p>현재 빌드는 앱 안에서 서버 계정을 생성하지 않으므로 별도의 서버 계정 삭제 절차가 없습니다.</p>
+        <p>로컬 플레이어 프로필과 대부분의 게임 진행 정보는 사용자의 기기 안에 보관됩니다. 사용자는 Android 앱 정보에서 앱 데이터를 삭제하거나 앱을 삭제해 로컬 데이터를 제거할 수 있습니다. 로그인 챌린지 기록판에 저장된 서버 기록 삭제가 필요한 경우 개인정보 문의 이메일로 요청할 수 있습니다.</p>
+        <p>현재 빌드는 결제나 유료 권한용 서버 계정을 생성하지 않습니다.</p>
       </section>
 
       <section>
         <h2>보안</h2>
-        <p>현재 빌드는 민감한 계정 토큰, 결제 정보, 광고 식별자, 위치 정보, 연락처 정보를 앱 안에 저장하지 않습니다. 향후 로그인이나 결제 기능을 추가할 경우 토큰 교환, 영수증 검증, 권한 관리는 서버 측에서 처리하고 비밀값은 앱 번들에 포함하지 않습니다.</p>
+        <p>현재 빌드는 민감한 계정 토큰, 결제 정보, 광고 식별자, 위치 정보, 연락처 정보를 앱 안에 저장하지 않습니다. Supabase service role key, DB 비밀번호, 서버 비밀값은 앱 번들에 포함하지 않습니다. 향후 결제 기능을 추가할 경우 토큰 교환, 영수증 검증, 권한 관리는 서버 측에서 처리합니다.</p>
       </section>
 
       <section>
@@ -115,12 +115,12 @@
 
       <section>
         <h2>변경</h2>
-        <p>Google 로그인, Toss 로그인, Apps in Toss 게임 사용자 식별키, AdMob, Apps in Toss 광고, Google Play Billing, Apps in Toss 결제, 분석/크래시 리포팅, 백엔드 진행도 동기화 기능이 추가되면 이 방침과 Play Console 데이터 보안 신고를 함께 갱신합니다.</p>
+        <p>Google 로그인, Toss 로그인, Apps in Toss 게임 사용자 식별키, AdMob, Apps in Toss 광고, Google Play Billing, Apps in Toss 결제, 분석/크래시 리포팅, 스테이지 보정용 telemetry, 전체 진행도 동기화 기능이 추가되면 이 방침과 Play Console 데이터 보안 신고를 함께 갱신합니다.</p>
       </section>
 
       <div class="english" lang="en">
         <h1>크레이지 뽁뽁이 Privacy Policy</h1>
-        <p class="updated">Last updated: 2026-06-14</p>
+        <p class="updated">Last updated: 2026-06-26</p>
 
         <section>
           <h2>App</h2>
@@ -134,7 +134,7 @@
 
         <section>
           <h2>Current Build Data Handling Summary</h2>
-          <p>The current Google Play submission build does not use account creation, live ads, live purchases, analytics SDKs, or a remote progress-sync server. The app can be used in guest mode without creating an account or signing in. The app stores the following information on the user's device to maintain gameplay:</p>
+          <p>The current build does not use live ads, live purchases, or separate analytics SDKs. The app can still be used in guest mode. If the user chooses sign-in or links a local player profile, Supabase may be used to provide the signed-in Daily/Weekly Challenge leaderboard. The app stores the following information on the user's device to maintain gameplay:</p>
           <ul>
             <li>Local player profile identifier and guest play state</li>
             <li>Language setting</li>
@@ -143,34 +143,34 @@
             <li>Stage clears, stars, best records, and daily/weekly challenge records</li>
             <li>Daily reward and daily mission state</li>
           </ul>
-          <p>The current build is not configured to send this information to a developer server or third parties. For Google Play Data safety purposes, the current build's gameplay data remains processed on device.</p>
+          <p>When the signed-in challenge leaderboard is used, the app may store the challenge kind, challenge date/week key, board seed, clear time, tap count, star count, booster/continue flags, app version, display name, internal app user identifier, and Supabase authenticated user ID in Supabase. Regular stage progress, Pop Pieces, cosmetics, boosters, daily reward, and mission state remain processed on device unless a separate sync feature is enabled later.</p>
         </section>
 
         <section>
           <h2>Permissions and Device Features</h2>
-          <p>The current Android submission build includes Internet and vibration permissions. Even with the Internet permission, the current build does not upload gameplay data, personal information, or advertising identifiers to a developer server. The vibration permission is used only for device vibration during pop effects. The app may use device audio output and vibration for pop effects, but it does not request camera, microphone, location, contacts, SMS, call logs, photos/videos, or Advertising ID permission. No Advertising ID permission is used in the current build.</p>
+          <p>The current Android submission build includes Internet and vibration permissions. Internet access may be used to serve app content and connect the signed-in challenge leaderboard. The vibration permission is used only for device vibration during pop effects. The app may use device audio output and vibration for pop effects, but it does not request camera, microphone, location, contacts, SMS, call logs, photos/videos, or Advertising ID permission. No Advertising ID permission is used in the current build.</p>
         </section>
 
         <section>
           <h2>Purpose</h2>
-          <p>Stored information is used to keep gameplay progress, preserve settings, show mode records, calculate daily rewards and missions, and review Pop Piece earn/spend history.</p>
+          <p>Stored information is used to keep gameplay progress, preserve settings, show mode records, calculate daily rewards and missions, review Pop Piece earn/spend history, and provide signed-in Daily/Weekly Challenge leaderboards.</p>
         </section>
 
         <section>
           <h2>Third Parties and SDKs</h2>
-          <p>The current Google Play submission build does not connect AdMob, Google Play Billing, Firebase Analytics, Crashlytics, ad mediation SDKs, or a separate analytics SDK. The current build is also not configured to share user data with a developer server or third-party server.</p>
+          <p>The current Google Play submission build does not connect AdMob, Google Play Billing, Firebase Analytics, Crashlytics, ad mediation SDKs, or a separate analytics SDK. Supabase may be used as the backend provider for the signed-in challenge leaderboard.</p>
           <p>The app is packaged as a Capacitor Android WebView app. The project may include Apps in Toss compatibility dependencies, but the current Google Play submission build does not enable Toss login, Apps in Toss ads, Apps in Toss payments, Apps in Toss game user keys, Google sign-in, Google Play Billing, or Advertising ID usage.</p>
         </section>
 
         <section>
           <h2>Retention and Deletion</h2>
-          <p>Local player profile and gameplay data are retained on the user's device. Users can remove local data by clearing app data in Android settings or uninstalling the app. Depending on the user's device or Google account settings, Android system backup/restore may process app data, but the developer does not separately collect that data on a server in the current build.</p>
-          <p>The current build does not create server accounts, so there is no separate server account deletion process.</p>
+          <p>Local player profile and most gameplay data are retained on the user's device. Users can remove local data by clearing app data in Android settings or uninstalling the app. Users can request deletion of server-side signed-in challenge leaderboard records by contacting the privacy email.</p>
+          <p>The current build does not create server accounts for purchases or paid entitlements.</p>
         </section>
 
         <section>
           <h2>Security</h2>
-          <p>The current build does not store sensitive account tokens, payment information, advertising identifiers, location information, or contacts in the app. If sign-in or purchases are added later, token exchange, receipt validation, and entitlement handling should be processed server-side, and secrets must not be bundled in the app.</p>
+          <p>The current build does not store sensitive account tokens, payment information, advertising identifiers, location information, or contacts in the app. Supabase service role keys, database passwords, and server secrets are not bundled in the app. If purchases are added later, token exchange, receipt validation, and entitlement handling should be processed server-side.</p>
         </section>
 
         <section>
@@ -180,7 +180,7 @@
 
         <section>
           <h2>Changes</h2>
-          <p>When Google sign-in, Toss login, Apps in Toss game user keys, AdMob, Apps in Toss ads, Google Play Billing, Apps in Toss payments, analytics/crash reporting, or backend progress sync are added, this policy and the Play Console Data safety declaration should be updated together.</p>
+          <p>When Google sign-in, Toss login, Apps in Toss game user keys, AdMob, Apps in Toss ads, Google Play Billing, Apps in Toss payments, analytics/crash reporting, stage-calibration telemetry, or full progress sync are added, this policy and the Play Console Data safety declaration should be updated together.</p>
         </section>
       </div>
     </main>
